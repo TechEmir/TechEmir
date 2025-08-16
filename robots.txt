@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.techemir.co.uk/sitemap.xml
+
+# Block admin areas
+Disallow: /admin/
+Disallow: /backup/

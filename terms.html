@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - TechEmir</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --accent: #ff3366;
+            --accent-light: #ff6b8a;
+            --dark: #0a0a0a;
+            --dark-light: #1a1a1a;
+            --white: #ffffff;
+            --gray: #8892b0;
+            --gray-light: #ccd6f6;
+            --success: #64ffda;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-dark: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .logo::before {
+            content: '{ ';
+            color: var(--accent);
+        }
+
+        .logo::after {
+            content: ' }';
+            color: var(--accent);
+        }
+
+        .back-button {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-button:hover {
+            background: var(--accent);
+            color: var(--dark);
+            box-shadow: 0 0 20px rgba(255, 51, 102, 0.3);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 100px;
+            padding: 4rem 2rem 6rem;
+            min-height: calc(100vh - 100px);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--white), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .last-updated {
+            background: rgba(255, 51, 102, 0.1);
+            border: 1px solid rgba(255, 51, 102, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .last-updated strong {
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .content-section {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background: var(--accent);
+        }
+
+        .content-text {
+            color: var(--gray-light);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .content-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--gray-light);
+            line-height: 1.6;
+        }
+
+        .content-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        .numbered-list {
+            list-style: none;
+            counter-reset: section-counter;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .numbered-list li {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray-light);
+            line-height: 1.6;
+            counter-increment: section-counter;
+        }
+
+        .numbered-list li::before {
+            content: counter(section-counter, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            font-size: 1rem;
+            width: 2rem;
+        }
+
+        .highlight-box {
+            background: rgba(100, 255, 218, 0.1);
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--success);
+            margin-bottom: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .warning-box {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box h4 {
+            color: #ffc107;
+            margin-bottom: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info {
+            background: var(--dark-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .contact-item i {
+            font-size: 1rem;
+        }
+
+        .subsection {
+            margin: 2rem 0;
+            padding-left: 1rem;
+            border-left: 2px solid rgba(255, 51, 102, 0.3);
+        }
+
+        .subsection h4 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.75rem 1rem;
+            }
+
+            .main-content {
+                padding: 2rem 1rem 4rem;
+                margin-top: 80px;
+            }
+
+            .content-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-details {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .page-header {
+                margin-bottom: 2rem;
+            }
+
+            .numbered-list li {
+                padding-left: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-section {
+                padding: 1.5rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                padding-left: 0.75rem;
+            }
+
+            .content-list li {
+                padding-left: 1.5rem;
+            }
+
+            .numbered-list li {
+                padding-left: 2rem;
+            }
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1001;
+        }
+
+        .scroll-progress {
+            height: 100%;
+            background: var(--gradient-accent);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+<!-- Scroll Indicator -->
+<div class="scroll-indicator">
+    <div class="scroll-progress"></div>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">TechEmir</a>
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Terms of Service</h1>
+            <p class="page-subtitle">
+                These terms govern your use of TechEmir's services. Please read them carefully
+                before engaging our technology and transport solutions.
+            </p>
+        </div>
+
+        <div class="last-updated">
+            <strong>Last Updated:</strong> August 1, 2025
+        </div>
+
+        <section class="content-section">
+            <h2 class="section-title">1. Acceptance of Terms</h2>
+            <p class="content-text">
+                By engaging TechEmir's services, contacting us for quotes, or using our website,
+                you agree to be bound by these Terms of Service. If you do not agree to these terms,
+                please do not use our services.
+            </p>
+            <p class="content-text">
+                These terms apply to all clients, including entertainment industry professionals,
+                businesses, and individual customers utilising our technology solutions and transport services.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">2. Services Overview</h2>
+            <p class="content-text">
+                TechEmir provides specialised technology and transport services, including but not limited to:
+            </p>
+
+            <div class="subsection">
+                <h4>Technology Services</h4>
+                <ul class="content-list">
+                    <li>Custom automation and scripting solutions</li>
+                    <li>IT support and system maintenance</li>
+                    <li>Cybersecurity implementation and monitoring</li>
+                    <li>Device lifecycle management and secure data wiping</li>
+                    <li>Infrastructure consulting and optimization</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>Transport Services</h4>
+                <ul class="content-list">
+                    <li>Office relocations and equipment moving</li>
+                    <li>IT infrastructure transport with specialised equipment</li>
+                    <li>Secure asset transport for sensitive technology</li>
+                    <li>Technology industry logistics coordination</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">3. Service Agreements & Contracts</h2>
+            <p class="content-text">
+                All services are provided under individual service agreements that specify:
+            </p>
+            <ol class="numbered-list">
+                <li><strong>Scope of Work:</strong> Detailed description of services to be provided</li>
+                <li><strong>Timeline:</strong> Project milestones and delivery schedules</li>
+                <li><strong>Pricing:</strong> Service fees, payment terms, and any additional costs</li>
+                <li><strong>Responsibilities:</strong> Client and TechEmir obligations</li>
+                <li><strong>Acceptance Criteria:</strong> Standards for service completion</li>
+            </ol>
+
+            <div class="highlight-box">
+                <h4>Logistics Industry Specialisation</h4>
+                <p class="content-text" style="margin-bottom: 0;">
+                    For logistics industry clients, we provide additional protections including
+                    enhanced confidentiality measures, production-aware scheduling, and specialised
+                    handling of sensitive and technical assets.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">4. Payment Terms</h2>
+            <p class="content-text">
+                Payment terms vary by service type and project scope:
+            </p>
+            <ul class="content-list">
+                <li><strong>Technology Services:</strong> Typically invoiced upon completion or monthly for ongoing support</li>
+                <li><strong>Transport Services:</strong> Payment due upon service completion unless otherwise agreed</li>
+                <li><strong>Large Projects:</strong> May require deposit and milestone-based payments</li>
+                <li><strong>Payment Methods:</strong> Bank transfer, corporate check, or approved payment systems</li>
+                <li><strong>Late Payments:</strong> Subject to 1.5% monthly interest charge after 30 days</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">5. Client Responsibilities</h2>
+            <p class="content-text">
+                To ensure successful service delivery, clients must:
+            </p>
+            <ol class="numbered-list">
+                <li>Provide accurate and complete information about requirements</li>
+                <li>Grant necessary access to systems, premises, and personnel</li>
+                <li>Respond promptly to requests for information or approvals</li>
+                <li>Ensure compliance with relevant health and safety regulations</li>
+                <li>Backup critical data before any system modifications</li>
+                <li>Notify us immediately of any changes to project requirements</li>
+                <li>Provide safe working conditions for our transport services</li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">6. Confidentiality & Data Protection</h2>
+            <p class="content-text">
+                We understand the sensitive nature of our clients' operations, particularly in the UK industry:
+            </p>
+            <ul class="content-list">
+                <li>All client information is treated as strictly confidential</li>
+                <li>Non-disclosure agreements available for sensitive projects</li>
+                <li>Secure handling and disposal of all client data</li>
+                <li>Compliance with UK GDPR and relevant data protection laws</li>
+                <li>Staff training on confidentiality and data protection</li>
+                <li>Secure transport protocols for sensitive equipment</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">7. Liability & Insurance</h2>
+            <p class="content-text">
+                TechEmir maintains comprehensive insurance coverage and accepts liability as follows:
+            </p>
+
+            <div class="subsection">
+                <h4>Our Liability Coverage</h4>
+                <ul class="content-list">
+                    <li>Professional indemnity insurance for technology services</li>
+                    <li>Public liability coverage for transport and on-site services</li>
+                    <li>Goods in transit insurance for equipment transportation</li>
+                    <li>Cyber liability insurance for data-related services</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>Limitation of Liability</h4>
+                <ul class="content-list">
+                    <li>Total liability limited to the value of services provided for the specific project</li>
+                    <li>Consequential damages excluded unless specifically agreed in writing</li>
+                    <li>Force majeure events beyond our reasonable control are excluded</li>
+                    <li>Client responsibility to maintain adequate insurance for their own assets</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">8. Service Level Agreements</h2>
+            <p class="content-text">
+                We commit to the following service standards:
+            </p>
+            <ul class="content-list">
+                <li><strong>Response Times:</strong> Initial response within 4 business hours</li>
+                <li><strong>Emergency Support:</strong> 24/7 availability for critical issues</li>
+                <li><strong>Transport Services:</strong> Punctual delivery within agreed timeframes</li>
+                <li><strong>Quality Standards:</strong> All work performed to industry best practices</li>
+                <li><strong>Communication:</strong> Regular project updates and transparent reporting</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">9. Cancellation & Changes</h2>
+            <p class="content-text">
+                Project modifications and cancellations are handled as follows:
+            </p>
+            <ol class="numbered-list">
+                <li><strong>Changes:</strong> Must be requested in writing with cost and timeline implications</li>
+                <li><strong>Transport Cancellation:</strong> 24-hour notice required to avoid charges</li>
+                <li><strong>Technology Projects:</strong> Cancellation charges based on work completed</li>
+                <li><strong>Ongoing Services:</strong> 30-day written notice required for termination</li>
+                <li><strong>Emergency Changes:</strong> Accepted with potential additional charges</li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">10. Intellectual Property</h2>
+            <p class="content-text">
+                Rights to intellectual property created during service provision:
+            </p>
+            <ul class="content-list">
+                <li><strong>Custom Code:</strong> Client owns rights to specifically developed solutions</li>
+                <li><strong>General Tools:</strong> TechEmir retains rights to proprietary methodologies</li>
+                <li><strong>Third-Party Software:</strong> Licensed according to original terms</li>
+                <li><strong>Documentation:</strong> Client receives full documentation for custom work</li>
+                <li><strong>Confidential Information:</strong> Remains property of the originating party</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">11. Termination</h2>
+            <p class="content-text">
+                Service agreements may be terminated under the following conditions:
+            </p>
+            <ol class="numbered-list">
+                <li><strong>Completion:</strong> Natural termination upon successful service delivery</li>
+                <li><strong>Convenience:</strong> Either party with 30-day written notice</li>
+                <li><strong>Breach:</strong> Immediate termination for material breach after written notice</li>
+                <li><strong>Insolvency:</strong> Automatic termination if either party becomes insolvent</li>
+                <li><strong>Force Majeure:</strong> Extended inability to perform due to circumstances beyond control</li>
+            </ol>
+
+            <div class="warning-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> Post-Termination</h4>
+                <p class="content-text" style="margin-bottom: 0;">
+                    Upon termination, TechEmir will securely return or destroy all client data
+                    as requested, and clients remain responsible for payment of services rendered.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">12. Dispute Resolution</h2>
+            <p class="content-text">
+                In the unlikely event of a dispute, we follow this escalation process:
+            </p>
+            <ol class="numbered-list">
+                <li><strong>Direct Discussion:</strong> Initial attempt to resolve through direct communication</li>
+                <li><strong>Formal Mediation:</strong> Independent mediation if direct resolution fails</li>
+                <li><strong>Arbitration:</strong> Binding arbitration under UK Arbitration Act</li>
+                <li><strong>Governing Law:</strong> All agreements governed by English law</li>
+                <li><strong>Jurisdiction:</strong> UK courts have exclusive jurisdiction</li>
+            </ol>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">13. Force Majeure</h2>
+            <p class="content-text">
+                Neither party shall be liable for delays or failures in performance due to circumstances
+                beyond reasonable control, including:
+            </p>
+            <ul class="content-list">
+                <li>Natural disasters, extreme weather, or environmental hazards</li>
+                <li>Government actions, regulations, or legal restrictions</li>
+                <li>Labor disputes, strikes, or workforce unavailability</li>
+                <li>Infrastructure failures, power outages, or network disruptions</li>
+                <li>Global pandemics or public health emergencies</li>
+                <li>Supply chain disruptions or material shortages</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-title">14. Updates to Terms</h2>
+            <p class="content-text">
+                These Terms of Service may be updated to reflect changes in our services,
+                legal requirements, or business practices:
+            </p>
+            <ul class="content-list">
+                <li>Updated terms posted on our website with revision date</li>
+                <li>Active clients notified of material changes via email</li>
+                <li>30-day notice period for significant modifications</li>
+                <li>Continued use of services constitutes acceptance of updated terms</li>
+                <li>Previous versions available upon request for reference</li>
+            </ul>
+        </section>
+
+        <div class="contact-info">
+            <h3>Questions About These Terms?</h3>
+            <p>
+                If you have any questions about these Terms of Service or need clarification
+                on any aspect of our services, please contact us.
+            </p>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>legal@techemir.co.uk</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+44 7865 797072</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    // Scroll Progress
+    window.addEventListener('scroll', () => {
+        const scrollProgress = document.querySelector('.scroll-progress');
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
+    });
+
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Fade in animation for sections
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'all 0.6s ease';
+        observer.observe(section);
+    });
+</script>
+</body>
+</html>

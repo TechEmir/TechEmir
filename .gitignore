@@ -1,0 +1,156 @@
+# TechEmir Website - .gitignore
+# Never commit sensitive information to version control!
+
+# Environment and Configuration Files
+.env
+.env.local
+.env.production
+.env.staging
+config.php
+database.php
+
+# Sensitive Admin Files
+admin/config.php
+admin/.env
+admin/credentials.php
+
+# API Keys and Secrets
+**/api-keys.php
+**/secrets.php
+**/config/
+supabase-config.php
+recaptcha-keys.php
+
+# Server Configuration
+.htaccess.local
+.htpasswd
+cpanel.yml
+
+# Logs and Temporary Files
+logs/
+*.log
+tmp/
+temp/
+cache/
+error_log
+access_log
+
+# Database Backups and Dumps
+*.sql
+*.db
+*.sqlite
+backup/
+backups/
+
+# PHP Specific
+vendor/
+composer.lock
+*.cache
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Node.js (if you add any build tools later)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Build and Distribution
+dist/
+build/
+public/assets/compiled/
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# WordPress (if you ever integrate)
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+
+# Email Test Files
+test-emails/
+email-logs/
+
+# Rate Limiting Files
+rate-limits/
+tmp/techemir_rate_limit_*
+
+# Backup Files
+*.bak
+*.backup
+*.old
+
+# Security Files
+security-logs/
+failed-logins.log
+suspicious-activity.log
+
+# Development Only
+development/
+dev-notes.txt
+todo.txt
+testing/
+
+# SSL Certificates (should be managed by hosting provider)
+*.pem
+*.key
+*.crt
+*.csr
+
+# Image Optimization Cache
+images/cache/
+assets/cache/
+
+# Form Submission Exports
+exports/
+contact-exports/
+
+# Analytics and Reports
+analytics/
+reports/
+statistics/
+
+# Common Sensitive Filenames
+credentials.txt
+passwords.txt
+secrets.txt
+api-keys.txt
+database-info.txt
+
+# Environment Specific
+local-config.php
+production-config.php
+staging-config.php
+
+# Hosting Provider Files
+.cpanel/
+.well-known/ (sometimes)
+cgi-bin/
+
+# FTP and Deployment
+.ftpconfig
+deploy-config.json
+deployment/
+
+# Never commit these patterns anywhere in the project
+**/password*
+**/secret*
+**/private*
+**/credential*
+**/*-key.php
+**/*-keys.php
+**/*-config.php (except public config)
