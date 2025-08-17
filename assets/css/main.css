@@ -1154,14 +1154,6 @@ body {
     gap: 0.5rem;
 }
 
-.footer-links a::before {
-    content: '→';
-    color: var(--accent);
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
-}
-
 .footer-links a:hover {
     color: var(--white);
     transform: translateX(5px);
